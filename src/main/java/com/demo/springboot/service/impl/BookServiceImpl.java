@@ -2,9 +2,9 @@ package com.demo.springboot.service.impl;
 
 import com.demo.springboot.dao.BookMapper;
 import com.demo.springboot.entity.Book;
+import com.demo.springboot.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.demo.springboot.service.BookService;
 
 import java.util.List;
 
