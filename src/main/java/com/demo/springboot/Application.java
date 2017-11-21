@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.demo.springboot.dao")
 public class Application {
     public static void main(String[] args) {
-        //SpringApplication.run(HelloController.class,args);
         SpringApplication.run(Application.class,args);
         System.out.println("启动成功=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
     }
