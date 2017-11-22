@@ -26,6 +26,15 @@ spring:
         testOnReturn: false
         poolPreparedStatements: true
         maxOpenPreparedStatements: 20
+    jpa:
+        database : MYSQL
+        show-sql : true
+        hibernate:
+          ddl-auto : update
+          naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+          hibernate:
+            dialect : org.hibernate.dialect.MySQL5Dialect
 #mybatis:
 #  mapperLocations: classpath:mapper/*.xml
 #  type-aliases-package: com.demo.springboot.entity
