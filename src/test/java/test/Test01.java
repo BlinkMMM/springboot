@@ -1,17 +1,14 @@
 package test;
 
 import com.demo.springboot.Application;
-import com.demo.springboot.entity.Book;
-import com.demo.springboot.service.BookService;
-import org.junit.Assert;
+import com.demo.springboot.dao.EmployeeMapper;
+import com.demo.springboot.entity.Employee;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-
-import java.util.List;
 
 /**
  * Created by hzheng2 on 17-11-22.
@@ -21,12 +18,11 @@ import java.util.List;
 @WebAppConfiguration
 public class Test01 {
     @Autowired
-    BookService bookService;
+    EmployeeMapper employeeMapper;
 
     @Test
-    public void testFindAllBook() {
-        List<Book> bookList = bookService.findAllBooks();
-        Assert.assertNotNull(bookList);
-        Assert.assertEquals(bookList.size(),4);
+    public void testEmployee() {
+        Employee employee = employeeMapper.selectByPrimaryKey(1);
+        System.out.println(employee.getDeptNo());
     }
 }
