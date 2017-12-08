@@ -3,6 +3,8 @@ package com.demo.springboot;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.web.SpringBootServletInitializer;
 
 /**
  * Created by hzheng2 on 17-11-20.
@@ -11,9 +13,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 @MapperScan("com.demo.springboot.dao")
-public class Application {
+public class Application extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
         System.out.println("启动成功=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+    }
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        // TODO Auto-generated method stub
+        return builder.sources(Application.class);
     }
 }
