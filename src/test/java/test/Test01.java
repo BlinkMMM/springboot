@@ -1,12 +1,14 @@
 package test;
 
 import com.demo.springboot.Application;
-import com.demo.springboot.dao.EmployeeMapper;
-import com.demo.springboot.entity.Employee;
+import com.demo.springboot.dao.BookMapper;
+import com.demo.springboot.entity.Book;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -18,11 +20,18 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 public class Test01 {
     @Autowired
-    EmployeeMapper employeeMapper;
+    private BookMapper bookMapper;
 
     @Test
-    public void testEmployee() {
-        Employee employee = employeeMapper.selectByPrimaryKey(1);
-        System.out.println(employee.getDeptNo());
+    public void testFind(){
+        Book book = bookMapper.selectByPrimaryKey(1);
+        Assert.assertEquals(book.getBookName(),"java从入门到放弃");
+    }
+
+    @Test
+    public void testSave(){
+        Book book = new Book(5,"test5",55.0,"tom3");
+        int ok = bookMapper.insert(book);
+        System.out.println("==========="+ok);
     }
 }

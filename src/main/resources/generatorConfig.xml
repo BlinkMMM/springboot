@@ -5,30 +5,30 @@
 
 <generatorConfiguration>
     <classPathEntry
-            location="/home/amarsoft/.m2/repository/mysql/mysql-connector-java/5.1.21/mysql-connector-java-5.1.21.jar"/>
+            location="C:\Users\zheng\.m2\repository\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.21.jar"/>
     <context id="my" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
-
+        <!--数据库url 账号 密码-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/my_test" userId="root"
                         password="root"/>
-
+        <!--实体生成位置  targetPackage是指指定包  targetProject是指在项目中的指定位置-->
         <javaModelGenerator targetPackage="com.demo.springboot.entity"
-                            targetProject="/home/amarsoft/mytest/spring/src/main/java">
+                            targetProject="D:\myProject\springboot\src\main\java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-
+        <!--mapper.xml映射文件生成位置  targetPackage是指指定包  targetProject是指在项目中的指定位置-->
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="/home/amarsoft/mytest/spring/src/main/java">
+                         targetProject="D:\myProject\springboot\src\main\resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
+        <!--dao接口文件生成位置  targetPackage是指指定包  targetProject是指在项目中的指定位置-->
         <javaClientGenerator targetPackage="com.demo.springboot.dao"
-                             targetProject="/home/amarsoft/mytest/spring/src/main/java" type="XMLMAPPER">
+                             targetProject="D:\myProject\springboot\src\main\java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -37,7 +37,7 @@
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>-->
 
-        <table tableName="employee" domainObjectName="Employee"
+        <table tableName="book" domainObjectName="Book"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
