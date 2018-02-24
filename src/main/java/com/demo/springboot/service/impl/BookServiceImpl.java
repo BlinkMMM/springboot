@@ -19,4 +19,9 @@ public class BookServiceImpl implements BookService{
     public List<Book> findAllBooks() {
         return bookMapper.findAllBook();
     }
+
+    @Override
+    public Integer saveBook(Book book) {
+        return null;
+    }
 }

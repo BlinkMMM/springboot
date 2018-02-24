@@ -42,7 +42,7 @@ public class Test01 {
 
     @Test
     public void testJpaSave(){
-        Book book = new Book(6,"test2",44,"xxx");
+        Book book = new Book(6,"hhh",44,"xxx");
         Book book1 = bookRepository.save(book);
 //        bookRepository.findAll();
 //        bookRepository.findOne(1);
