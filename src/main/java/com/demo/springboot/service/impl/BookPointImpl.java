@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public class BookPointImpl implements BookPoint{
     @Override
     public void speaking() {
-        System.out.println("==========切点开始啦==========");
+        System.out.println("==========我是切点==========");
     }
 }

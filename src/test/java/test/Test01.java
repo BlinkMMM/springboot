@@ -3,6 +3,7 @@ package test;
 import com.demo.springboot.Application;
 import com.demo.springboot.dao.BookRepository;
 import com.demo.springboot.entity.Book;
+import com.demo.springboot.service.BookPoint;
 import com.demo.springboot.service.BookService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,6 +26,9 @@ public class Test01 {
     BookService bookService;
     @Autowired
     BookRepository bookRepository;
+    @Autowired
+    BookPoint bookPoint;
+
     @Test
     public void testFindAllBook() {
         List<Book> bookList = bookService.findAllBooks();
@@ -51,5 +55,10 @@ public class Test01 {
 //        bookRepository.count();
 //        bookRepository.exists(1);
         System.out.println(book1);
+    }
+
+    @Test
+    public void testSpeaking(){
+        bookPoint.speaking();
     }
 }
